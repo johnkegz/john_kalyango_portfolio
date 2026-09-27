@@ -2,6 +2,9 @@
 
 import { useState } from 'react'
 import './index.css'
+import storyboardImage from './assets/storyboard.png'
+import uboravibesImage from './assets/uboravibes.png'
+import treeocloudImage from './assets/treeocloud.png'
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -119,16 +122,139 @@ function App() {
       <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Skills & Technologies</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              'JavaScript', 'React', 'Node.js', 'Python', 
-              'Django', 'PostgreSQL', 'Git', 'Docker',
-              'REST APIs', 'HTML/CSS', 'TypeScript', 'MongoDB'
-            ].map((skill) => (
-              <div key={skill} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
-                <span className="text-gray-800 font-medium">{skill}</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Frontend */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Frontend</h3>
               </div>
-            ))}
+              <div className="flex flex-wrap gap-2">
+                {['TypeScript', 'JavaScript', 'React', 'Next.js', 'Angular', 'Redux', 'React Native', 'HTML5', 'CSS / Tailwind CSS'].map((skill) => (
+                  <span key={skill} className="bg-purple-50 text-purple-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-purple-100 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Backend */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Backend</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Node.js', 'NestJS', 'Python', 'FastAPI', 'Flask', 'Django', 'REST APIs'].map((skill) => (
+                  <span key={skill} className="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-blue-100 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Databases */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Databases</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['PostgreSQL', 'PostGIS', 'MongoDB', 'SQLite', 'Sequelize', 'SQLAlchemy'].map((skill) => (
+                  <span key={skill} className="bg-green-50 text-green-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-green-100 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Cloud & DevOps */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Cloud & DevOps</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Google Cloud Platform (GCP)', 'Docker', 'GitHub Actions', 'CI/CD', 'Google Cloud Run', 'Google Cloud Storage', 'Pub/Sub'].map((skill) => (
+                  <span key={skill} className="bg-orange-50 text-orange-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-100 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Testing & Monitoring */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Testing & Monitoring</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Jest', 'Supertest', 'Sentry', 'Grafana'].map((skill) => (
+                  <span key={skill} className="bg-red-50 text-red-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* AI & Modern Development */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">AI & Modern Development</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Cursor', 'Claude Code', 'GitHub Copilot', 'Ollama', 'LLM integration', 'Prompt Engineering'].map((skill) => (
+                  <span key={skill} className="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-indigo-100 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Other */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 md:col-span-2 lg:col-span-3">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Other</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Git', 'OAuth2 / OIDC', 'JWT', 'Mapbox', 'Stripe', 'PostGIS / Geospatial APIs'].map((skill) => (
+                  <span key={skill} className="bg-gray-50 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -137,22 +263,22 @@ function App() {
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Storyboard Project */}
             <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-                <span className="text-white text-6xl font-bold">S</span>
+              <div className="h-48 overflow-hidden">
+                <img src={storyboardImage} alt="Storyboard Reporting" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Storyboard Reporting</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">TRREO Storyboard</h3>
                 <p className="text-gray-600 mb-4">
-                  Developed reporting features for storyboard.treeo.one, including the STIHL report system with advanced data visualization.
+                Organizations can view reports on carbon impact, tree growth, and expected carbon capture, helping them track results and plan ahead
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Dashboard</span>
                   <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Reports</span>
-                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Data Viz</span>
+                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Data Visualization</span>
+                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Analytics</span>
                 </div>
                 <a 
                   href="https://storyboard.treeo.one/stihl/report" 
@@ -167,18 +293,17 @@ function App() {
 
             {/* Uboravibes Project */}
             <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                <span className="text-white text-6xl font-bold">U</span>
+              <div className="h-48 overflow-hidden">
+                <img src={uboravibesImage} alt="Uboravibes" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Uboravibes</h3>
                 <p className="text-gray-600 mb-4">
-                  A personal project showcasing modern web development practices and creating engaging user experiences.
+                  Helps people discover events, places, and experiences wherever they are, while giving businesses and organizers a simple way to list and promote what they offer.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Full Stack</span>
-                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Web App</span>
-                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Personal</span>
+                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Optical Character Recognition</span>
+                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Large Language Model</span>
                 </div>
                 <a 
                   href="http://uboravibes.com/" 
@@ -193,47 +318,21 @@ function App() {
 
             {/* Treeo Project */}
             <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                <span className="text-white text-6xl font-bold">T</span>
+              <div className="h-48 overflow-hidden">
+                <img src={treeocloudImage} alt="Treeo Cloud Platform" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Treeo Cloud Platform</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">TREEO cloud</h3>
                 <p className="text-gray-600 mb-4">
-                  Contributing to the development of cloud.treeo.one, a comprehensive cloud-based platform for business solutions.
+                  TREEO Cloud brings tree data together in one place for easy collection, visualization, and analysis.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm">React</span>
-                  <span className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm">Node.js</span>
-                  <span className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm">Cloud</span>
+                  <span className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm">Data Visualization</span>
+                  <span className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm">Data Collection</span>
+                  <span className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm">Farmer Profiling</span>
                 </div>
                 <a 
                   href="https://cloud.treeo.one/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-primary-600 font-medium hover:text-primary-700 inline-flex items-center"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
-
-            {/* CCMAS Project */}
-            <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                <span className="text-white text-6xl font-bold">C</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">CCMAS</h3>
-                <p className="text-gray-600 mb-4">
-                  A web application deployed on Netlify, demonstrating modern deployment practices and responsive design.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm">Web App</span>
-                  <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm">Netlify</span>
-                  <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm">Responsive</span>
-                </div>
-                <a 
-                  href="https://ccmas.netlify.app/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-primary-600 font-medium hover:text-primary-700 inline-flex items-center"
